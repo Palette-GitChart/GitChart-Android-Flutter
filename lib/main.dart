@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:git_chart/Pages/Main_Home_Page.dart';
-import 'package:git_chart/Test.dart';
 
 void main() {
   runApp(const MyApp());
