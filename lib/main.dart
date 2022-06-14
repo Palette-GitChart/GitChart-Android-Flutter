@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:git_chart/Pages/Main_Home_Page.dart';
+
+import 'Tab_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color(0xfff5f5f5),
         primarySwatch: Colors.blue,
       ),
-      home: MainHomePage(),
+      home: TabPage(),
     );
   }
 }
