@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Friends_page.dart';
 import 'Home_page.dart';
+import 'Star_page.dart';
 
 class TabPage extends StatefulWidget {
 
@@ -20,6 +21,7 @@ class _TabPageState extends State<TabPage> {
     _pages = [
       HomePage(),
       FriendPage(),
+      StarPage(),
     ];
   }
 
@@ -37,11 +39,11 @@ class _TabPageState extends State<TabPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            label: 'Music',
+            label: 'Friends',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.star),
-            label: 'Apps',
+            label: 'Star',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
