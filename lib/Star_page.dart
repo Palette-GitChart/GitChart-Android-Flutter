@@ -50,25 +50,21 @@ class StarPage extends StatelessWidget {
       child: FlatButton(
         onPressed: () {},
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(width: 15),
-            CircleAvatar(
-              radius: 25,
-              backgroundColor: Color(0xffC4C4C4),
-            ),
-            SizedBox(width: 12),
+            SizedBox(width: 21.04),
             Row(
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('junbum9416',
+                    Text('green-green-android',
                         style: TextStyle(
                             fontFamily: 'NotoSans',
                             fontSize: 18,
                             fontWeight: FontWeight.w600)),
                     SizedBox(height: 6),
-                    Text('팔로워 24 | 팔로우 24',
+                    Text('junbum9416 | Android',
                         style: TextStyle(
                           fontFamily: 'NotoSans',
                           fontSize: 13,
@@ -78,6 +74,11 @@ class StarPage extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+            SizedBox(width: 70),
+            CircleAvatar(
+              radius: 25,
+              backgroundColor: Color(0xffC4C4C4),
             ),
           ],
         ),
