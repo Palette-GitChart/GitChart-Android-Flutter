@@ -32,8 +32,6 @@ class HomePage extends StatelessWidget {
                 buildDaliyCommitGoal(),
                 SizedBox(height: 15),
                 buildCommitTrend(),
-                SizedBox(height: 150),
-                buildCommitTrend(),
               ],
             ),
           ),
