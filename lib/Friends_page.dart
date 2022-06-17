@@ -32,7 +32,42 @@ class FriendPage extends StatelessWidget {
                 SizedBox(height: 15),
                 buildFriendContainer(),
                 SizedBox(height: 15),
-                buildAddFriends()
+                buildAddFriends(),
+                FlatButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Container(
+                          height: 530, // 모달 높이 크기
+                          decoration: BoxDecoration(
+                            color: Colors.white, // 모달 배경색
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Text("data"), // 모달 내부 디자인 영역
+                        );
+                      },
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.add_circle_outline,
+                        color: Color(0xff7fc567),
+                      ),
+                      SizedBox(width: 8.5),
+                      Text(
+                        "Add Friends",
+                        style: TextStyle(
+                            fontFamily: 'NotoSans',
+                            fontSize: 17,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff7fc567)),
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -49,22 +84,6 @@ class FriendPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
       child: FlatButton(
         onPressed: () {
-          showModalBottomSheet(
-            context: context,
-            builder: (BuildContext context) {
-              return Container(
-                height: 530, // 모달 높이 크기
-                decoration: const BoxDecoration(
-                  color: Colors.white, // 모달 배경색
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20), // 모달 좌상단 라운딩 처리
-                    topRight: Radius.circular(20), // 모달 우상단 라운딩 처리
-                  ),
-                ),
-                child: Text("data"), // 모달 내부 디자인 영역
-              );
-            },
-          );
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
