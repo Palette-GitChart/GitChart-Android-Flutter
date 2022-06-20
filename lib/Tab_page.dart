@@ -51,7 +51,7 @@ class _TabPageState extends State<TabPage> {
           ),
         ],
         //selected된 item color
-        selectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
         //unselected된 item color
         unselectedItemColor: Colors.grey,
         //selected된 label text
