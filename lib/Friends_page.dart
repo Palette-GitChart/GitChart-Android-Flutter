@@ -100,8 +100,18 @@ class _FriendPageState extends State<FriendPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 390),
-                    FlatButton(onPressed: () {}, child: Text("완료"))
+                    SizedBox(height: 300),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30, right: 30),
+                      child: Container(
+                          width: 300,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              color: Color(0xffC4C4C4)),
+                          child:
+                              FlatButton(onPressed: () {}, child: Text("완료"))),
+                    )
                   ],
                 ),
               );
