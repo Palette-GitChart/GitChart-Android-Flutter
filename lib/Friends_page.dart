@@ -82,6 +82,9 @@ class _FriendPageState extends State<FriendPage> {
                       padding: const EdgeInsets.only(left: 30, right: 30),
                       child: TextFormField(
                         cursorColor: Colors.black,
+                        validator: (text) {
+
+                        },
                         style: TextStyle(
                             fontFamily: 'NotoSans',
                             fontSize: 13,

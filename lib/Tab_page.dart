@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Friends_page.dart';
 import 'Home_page.dart';
+import 'Setting_page.dart';
 import 'Star_page.dart';
 
 class TabPage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _TabPageState extends State<TabPage> {
       HomePage(),
       FriendPage(),
       StarPage(),
+      SettingPage(),
     ];
   }
 
