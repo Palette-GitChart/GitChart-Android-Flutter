@@ -56,16 +56,19 @@ class _FriendPageState extends State<FriendPage> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
+            isScrollControlled: true,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
             builder: (BuildContext context) {
               return Container(
-                height: 530, // 모달 높이 크기
+                height: 585, // 모달 높이 크기
                 decoration: BoxDecoration(
-                  color: Colors.white, // 모달 배경색
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+                    color: Colors.white, // 모달 배경색
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20.0),
+                      topRight: Radius.circular(20.0),
+                    )),
                 child: Column(
                   children: <Widget>[
                     SizedBox(height: 30),
@@ -82,9 +85,7 @@ class _FriendPageState extends State<FriendPage> {
                       padding: const EdgeInsets.only(left: 30, right: 30),
                       child: TextFormField(
                         cursorColor: Colors.black,
-                        validator: (text) {
-
-                        },
+                        validator: (text) {},
                         style: TextStyle(
                             fontFamily: 'NotoSans',
                             fontSize: 13,
@@ -103,9 +104,12 @@ class _FriendPageState extends State<FriendPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 300),
+                    SizedBox(height: 370),
                     Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 30),
+                      padding: EdgeInsets.only(
+                          left: 30,
+                          right: 30,
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
                       child: Container(
                           width: 300,
                           height: 40,
@@ -161,24 +165,11 @@ class _FriendPageState extends State<FriendPage> {
             SizedBox(width: 12),
             Row(
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('junbum9416',
-                        style: TextStyle(
-                            fontFamily: 'NotoSans',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600)),
-                    SizedBox(height: 6),
-                    Text('팔로워 24 | 팔로우 24',
-                        style: TextStyle(
-                          fontFamily: 'NotoSans',
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xffA7A7A7),
-                        )),
-                  ],
-                ),
+                Text('junbum9416',
+                    style: TextStyle(
+                        fontFamily: 'NotoSans',
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500)),
               ],
             ),
           ],
