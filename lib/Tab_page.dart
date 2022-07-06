@@ -6,7 +6,6 @@ import 'Setting_page.dart';
 import 'Star_page.dart';
 
 class TabPage extends StatefulWidget {
-
   @override
   _TabPageState createState() => _TabPageState();
 }

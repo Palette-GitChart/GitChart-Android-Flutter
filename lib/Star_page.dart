@@ -7,32 +7,37 @@ class StarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.only(left: 30, right: 30),
         child: Container(
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 63),
-                buildStar(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
-                SizedBox(height: 15),
-                buildStarContainer(),
+                Column(
+                  children: [
+                    SizedBox(height: 63),
+                    buildStar(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                    SizedBox(height: 15),
+                    buildStarContainer(),
+                  ],
+                ),
               ],
             ),
           ),
@@ -41,65 +46,73 @@ class StarPage extends StatelessWidget {
     );
   }
 
-  Container buildStarContainer() {
+  Widget buildStarContainer() {
     return Container(
-      width: 300,
-      height: 70,
+      width: 320,
+      height: 80,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0), color: Colors.white),
+          borderRadius: BorderRadius.circular(20.0), color: Colors.white),
       child: FlatButton(
         onPressed: () {},
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('green-green-android',
+        child: Padding(
+          padding: EdgeInsets.only(left: 10, right: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 220,
+                    child: Text('swift-api-design-guidelines',
                         style: TextStyle(
                             fontFamily: 'NotoSans',
-                            fontSize: 17,
+                            fontSize: 15,
                             fontWeight: FontWeight.w500)),
-                    SizedBox(height: 6),
-                    Text('junbum9416 - Flutter',
+                  ),
+                  SizedBox(height: 7),
+                  Container(
+                    width: 220,
+                    child: Text('junbum9416 - Flutter',
                         style: TextStyle(
                           fontFamily: 'NotoSans',
-                          fontSize: 13,
+                          fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: Color(0xffA7A7A7),
                         )),
-                  ],
-                ),
-                SizedBox(width: 15),
-                CircleAvatar(
-                  radius: 25,
+                  ),
+                ],
+              ),
+              Container(
+                height: 40,
+                width: 40,
+                child: CircleAvatar(
+                  radius: 40,
                   backgroundColor: Color(0xffC4C4C4),
                 ),
-                SizedBox(width: 10),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Row buildStar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Text('Star',
-            style: TextStyle(
-              fontFamily: 'NotoSans',
-              fontSize: 30,
-              fontWeight: FontWeight.w600,
-              color: Color(0xff67C58E),
-            )),
-      ],
+  Widget buildStar() {
+    return Container(
+      width: 320,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text('Star',
+              style: TextStyle(
+                fontFamily: 'NotoSans',
+                fontSize: 36,
+                fontWeight: FontWeight.w600,
+                color: Color(0xff626262),
+              )),
+        ],
+      ),
     );
   }
 }
-
