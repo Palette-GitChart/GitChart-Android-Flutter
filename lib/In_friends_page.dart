@@ -6,7 +6,7 @@ class InFriendsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: buildAppBar(context),
       body: Padding(
         padding: EdgeInsets.only(left: 15, right: 15, top: 25),
         child: Container(
@@ -19,12 +19,12 @@ class InFriendsPage extends StatelessWidget {
                   SizedBox(height: 30),
                   buildName(),
                   SizedBox(height: 5),
-                  buildFollow(),
+                  buildFollowerFollow(),
                   SizedBox(height: 30),
                   buildTodayCommit(),
                   SizedBox(height: 15),
                   buildYearCommit(),
-                  SizedBox(height: 15),
+                  SizedBox(height: 105),
                   buildWebButton()
                 ],
               ),
@@ -66,21 +66,24 @@ class InFriendsPage extends StatelessWidget {
     );
   }
 
-  Widget buildFollow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text('팔로워 12명',
-            style: TextStyle(
-                fontFamily: 'NotoSans',
-                fontSize: 15,
-                fontWeight: FontWeight.w500)),
-        Text('팔로우 23명',
-            style: TextStyle(
-                fontFamily: 'NotoSans',
-                fontSize: 15,
-                fontWeight: FontWeight.w500))
-      ],
+  Widget buildFollowerFollow() {
+    return Container(
+      width: 190,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text('팔로워 12명',
+              style: TextStyle(
+                  fontFamily: 'NotoSans',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500)),
+          Text('팔로우 23명',
+              style: TextStyle(
+                  fontFamily: 'NotoSans',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500))
+        ],
+      ),
     );
   }
 
@@ -98,6 +101,38 @@ class InFriendsPage extends StatelessWidget {
         radius: 50,
         backgroundColor: Color(0xffC4C4C4),
       ),
+    );
+  }
+
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      leadingWidth: 100,
+      leading: Row(
+        children: [
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            color: Color(0xff67C58E),
+            icon: Icon(Icons.chevron_left),
+          ),
+          Text('Friends',
+              style: TextStyle(
+                fontFamily: 'NotoSans',
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff67C58E),
+              )),
+        ],
+      ),
+      actions: [
+        IconButton(
+            onPressed: () {},
+            color: Color(0xffff3b30),
+            icon: Icon(Icons.delete)),
+      ],
+      elevation: 0,
     );
   }
 }
