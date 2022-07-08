@@ -123,6 +123,13 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
                   color: Color(0xffF5F5F5)),
+              child: Container(
+                width: 155,
+                height: 15,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Color(0xff7FC567)),
+              ),
             ),
             SizedBox(height: 13),
             Row(

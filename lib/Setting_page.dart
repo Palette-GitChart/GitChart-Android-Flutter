@@ -14,31 +14,28 @@ class _SettingPageState extends State<SettingPage> {
       body: Padding(
         padding: EdgeInsets.only(left: 30, right: 30),
         child: Container(
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    SizedBox(height: 63),
-                    buildSettings(),
-                    SizedBox(height: 15),
-                    buildProfile(),
-                    SizedBox(height: 15),
-                    buildChangeID(),
-                    SizedBox(height: 15),
-                    buildChangeCommitGoal(),
-                    SizedBox(height: 15),
-                    buildDeveloper(),
-                    SizedBox(height: 15),
-                    buildOpenSource(),
-                    SizedBox(height: 15),
-                    buildInquiry(),
-                  ],
-                ),
-              ],
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  SizedBox(height: 63),
+                  buildSettings(),
+                  SizedBox(height: 15),
+                  buildProfile(),
+                  SizedBox(height: 15),
+                  buildChangeID(),
+                  SizedBox(height: 15),
+                  buildChangeCommitGoal(),
+                  SizedBox(height: 15),
+                  buildDeveloper(),
+                  SizedBox(height: 15),
+                  buildOpenSource(),
+                  SizedBox(height: 15),
+                  buildInquiry(),
+                ],
+              ),
+            ],
           ),
         ),
       ),

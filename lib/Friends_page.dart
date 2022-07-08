@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'In_friends_page.dart';
+
 class FriendPage extends StatefulWidget {
   const FriendPage({Key? key}) : super(key: key);
 
@@ -20,7 +22,6 @@ class _FriendPageState extends State<FriendPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(height: 63),
                     buildFriends(),
@@ -57,7 +58,12 @@ class _FriendPageState extends State<FriendPage> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => InFriendsPage()),
+          );
+        },
         child: Padding(
           padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
           child: Row(
