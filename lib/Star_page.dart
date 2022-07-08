@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class StarPage extends StatelessWidget {
+import 'In_star_page.dart';
+
+class StarPage extends StatefulWidget {
   const StarPage({Key? key}) : super(key: key);
 
+  @override
+  State<StarPage> createState() => _StarPageState();
+}
+
+class _StarPageState extends State<StarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +60,12 @@ class StarPage extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0), color: Colors.white),
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => InStarPage()),
+          );
+        },
         child: Padding(
           padding: EdgeInsets.only(left: 10, right: 10),
           child: Row(
