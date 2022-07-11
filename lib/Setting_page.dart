@@ -8,6 +8,8 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
+  static final double _cornerRadius = 5.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +46,7 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget buildInquiry() {
     return Container(
-      width: 300,
+      width: 320,
       height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
@@ -73,7 +75,7 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget buildOpenSource() {
     return Container(
-      width: 300,
+      width: 320,
       height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
@@ -102,7 +104,7 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget buildDeveloper() {
     return Container(
-      width: 300,
+      width: 320,
       height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
@@ -131,79 +133,96 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget buildChangeCommitGoal() {
     return Container(
-      width: 300,
+      width: 320,
       height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
       child: FlatButton(
         onPressed: () {
-          showModalBottomSheet(
+          showDialog(
             context: context,
-            isScrollControlled: true,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-            builder: (BuildContext context) {
-              return Container(
-                height: 585, // 모달 높이 크기
-                decoration: BoxDecoration(
-                    color: Colors.white, // 모달 배경색
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.0),
-                      topRight: Radius.circular(20.0),
-                    )),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(height: 30),
-                    Text(
-                      "친구의 Github 아이디를 입력해주세요.",
-                      style: TextStyle(
-                          fontFamily: 'NotoSans',
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff67C58E)),
-                    ),
-                    SizedBox(height: 45),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 30),
-                      child: TextFormField(
-                        cursorColor: Colors.black,
-                        validator: (text) {},
-                        style: TextStyle(
-                            fontFamily: 'NotoSans',
-                            fontSize: 13,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xff000000)),
-                        decoration: InputDecoration(
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xffCBCBCB)),
-                          ),
-                          hintText: "Github 아이디를 입력해주세요.",
-                          hintStyle: TextStyle(
+            barrierDismissible: false,
+            builder: (BuildContext ctx) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AlertDialog(
+                    content: Column(
+                      children: [
+                        Text(
+                          '일일 커밋 목표 수정',
+                          style: TextStyle(
+                              fontFamily: 'NotoSans',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff000000)),
+                        ),
+                        SizedBox(height: 12),
+                        Text(
+                          '자신이 원하는 목표를 입력하세요',
+                          style: TextStyle(
                               fontFamily: 'NotoSans',
                               fontSize: 13,
                               fontWeight: FontWeight.w400,
-                              color: Color(0xffCBCBCB)),
+                              color: Color(0xff000000)),
                         ),
-                      ),
+                        SizedBox(height: 8),
+                        TextFormField(
+                          cursorColor: Color(0xff67C58E),
+                          validator: (text) {},
+                          style: TextStyle(
+                              fontFamily: 'NotoSans',
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xff000000)),
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: "커밋 개수를 입력하세요",
+                            hintStyle: TextStyle(
+                                fontFamily: 'NotoSans',
+                                fontSize: 13,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0x4D3C3C34)),
+                          ),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 370),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: 30,
-                          right: 30,
-                          bottom: MediaQuery.of(context).viewInsets.bottom),
-                      child: Container(
-                          width: 300,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Color(0xffC4C4C4)),
-                          child:
-                              FlatButton(onPressed: () {}, child: Text("완료"))),
-                    )
-                  ],
-                ),
+                    actions: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FlatButton(
+                              onPressed: () {},
+                              child: Text(
+                                '확인',
+                                style: TextStyle(
+                                    fontFamily: 'NotoSans',
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff67C58E)),
+                              )),
+                          FlatButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text(
+                                '취소',
+                                style: TextStyle(
+                                    fontFamily: 'NotoSans',
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xffFF6767)),
+                              )),
+                        ],
+                      ),
+                    ],
+                    backgroundColor: Color(0xCCF2F2F2),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(14)),
+                    ),
+                  ),
+                ],
               );
             },
           );
@@ -231,7 +250,7 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget buildChangeID() {
     return Container(
-      width: 300,
+      width: 320,
       height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
@@ -256,7 +275,7 @@ class _SettingPageState extends State<SettingPage> {
                   children: <Widget>[
                     SizedBox(height: 30),
                     Text(
-                      "친구의 Github 아이디를 입력해주세요.",
+                      "Github 아이디를 입력해주세요.",
                       style: TextStyle(
                           fontFamily: 'NotoSans',
                           fontSize: 13,
@@ -264,44 +283,34 @@ class _SettingPageState extends State<SettingPage> {
                           color: Color(0xff67C58E)),
                     ),
                     SizedBox(height: 45),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 30),
-                      child: TextFormField(
-                        cursorColor: Colors.black,
-                        validator: (text) {},
-                        style: TextStyle(
+                    TextFormField(
+                      cursorColor: Colors.black,
+                      validator: (text) {},
+                      style: TextStyle(
+                          fontFamily: 'NotoSans',
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff000000)),
+                      decoration: InputDecoration(
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xffCBCBCB)),
+                        ),
+                        hintText: "Github 아이디를 입력해주세요.",
+                        hintStyle: TextStyle(
                             fontFamily: 'NotoSans',
                             fontSize: 13,
                             fontWeight: FontWeight.w400,
-                            color: Color(0xff000000)),
-                        decoration: InputDecoration(
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xffCBCBCB)),
-                          ),
-                          hintText: "Github 아이디를 입력해주세요.",
-                          hintStyle: TextStyle(
-                              fontFamily: 'NotoSans',
-                              fontSize: 13,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xffCBCBCB)),
-                        ),
+                            color: Color(0xffCBCBCB)),
                       ),
                     ),
                     SizedBox(height: 370),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: 30,
-                          right: 30,
-                          bottom: MediaQuery.of(context).viewInsets.bottom),
-                      child: Container(
-                          width: 300,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Color(0xffC4C4C4)),
-                          child:
-                              FlatButton(onPressed: () {}, child: Text("완료"))),
-                    )
+                    Container(
+                        width: 300,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Color(0xffC4C4C4)),
+                        child: FlatButton(onPressed: () {}, child: Text("완료"))),
                   ],
                 ),
               );
@@ -312,7 +321,7 @@ class _SettingPageState extends State<SettingPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Github 아이디 추가, 변경",
+              "Github 아이디 변경",
               style: TextStyle(
                   fontFamily: 'NotoSans',
                   fontSize: 17,
@@ -331,7 +340,7 @@ class _SettingPageState extends State<SettingPage> {
 
   Widget buildProfile() {
     return Container(
-      width: 300,
+      width: 320,
       height: 90,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0), color: Colors.white),
